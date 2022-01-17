@@ -1,0 +1,79 @@
+<html>
+    
+<head>
+    <title>Stonks</title>
+    <link rel="stylesheet" href='/static/main.css' />
+</head>
+
+<body>
+
+    <h1 id="top">Back to the Future</h1>
+    <a href="http://127.0.0.1:5000/team/">About our team</a><br/>
+    <h3>Our top trending stocks:</h3>
+    <a href="#stock1">{{ ticker_1_name }}</a>
+    <a href="#stock2">{{ ticker_2_name }}</a>
+    <a href="#stock3">{{ ticker_3_name }}</a>
+
+    <h3 id="stock1">{{ ticker_1_name }}</h3>
+    <h3>Sentiment score:</h3>
+    <p>{{ ticker_1_senti }}</p><br>
+    <h3>Historial & Future Stock price</h3><br>
+    <table> 
+        <tr>  
+            <th>Date</th>
+            <th>Close</th>
+            <th>Prediction</th>
+        </tr>
+        {% for row in ticker_1_data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br/><br/>
+    <a href="#top">back to top</a><br/>
+    <h3 id="stock2">{{ ticker_2_name }}</h3>
+    <h3>Sentiment score:</h3>
+    <p>{{ ticker_2_senti }}</p><br>
+    <h3>Historial & Future Stock price</h3><br>
+    <table> 
+        <tr>  
+            <th>Date</th>
+            <th>Close</th>
+            <th>Prediction</th>
+        </tr>
+        {% for row in ticker_2_data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br/><br/>
+    <a href="#top">back to top</a><br/>
+    <h3 id="stock3">{{ ticker_3_name }}</h3>
+    <h3>Sentiment score:</h3>
+    <p>{{ ticker_3_senti }}</p><br>
+    <h3>Historial & Future Stock price</h3><br>
+    <table> 
+        <tr>  
+            <th>Date</th>
+            <th>Close</th>
+            <th>Prediction</th>
+        </tr>
+        {% for row in ticker_3_data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
